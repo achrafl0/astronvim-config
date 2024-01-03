@@ -3,6 +3,14 @@ return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   "ThePrimeagen/harpoon",
   {
+    "baliestri/aura-theme",
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+    end
+  },
+  {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
       { 'tpope/vim-dadbod', lazy = true },

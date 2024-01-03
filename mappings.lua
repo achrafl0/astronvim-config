@@ -7,6 +7,17 @@ return {
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
+    ["s"] = false,
+     ["<S-l>"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<S-h>"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },   
+    ["S"] = false,
+    
 
     -- navigate buffer tabs with `H` and `L`
     ["tl"] = {
