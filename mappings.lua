@@ -8,16 +8,15 @@ return {
   n = {
     -- second key is the lefthand side of the map
     ["s"] = false,
-     ["<S-l>"] = {
+    ["<S-l>"] = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
     },
     ["<S-h>"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
-    },   
+    },
     ["S"] = false,
-    
 
     -- navigate buffer tabs with `H` and `L`
     ["tl"] = {
@@ -28,24 +27,16 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    ["L"] = {
-      "$"
-    },
-    ["H"] = {
-      "^"
-    },
     ["<down>"] = {
-      ":m .+1<CR>=="
+      ":m .+1<CR>==",
     },
     ["<up>"] = {
-      ":m .-2<CR>=="
+      ":m .-2<CR>==",
     },
     ["<C-x>"] = {
       function() require("astronvim.utils.buffer").close() end,
       desc = "Close current buffer",
     },
-
-
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
@@ -60,17 +51,15 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     ["<leader>m"] = {
       function() require("harpoon.mark").add_file() end,
-      desc = "add file to harpoon"
+      desc = "add file to harpoon",
     },
     ["<leader>fm"] = {
-      function() require('harpoon.ui').toggle_quick_menu() end,
-      desc = "show all files in harpoon"
-    }
-
-
+      function() require("harpoon.ui").toggle_quick_menu() end,
+      desc = "show all files in harpoon",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -78,18 +67,18 @@ return {
   },
   i = {
     ["<down>"] = {
-      "<Esc>:m .+1<CR>==gi"
+      "<Esc>:m .+1<CR>==gi",
     },
     ["<up>"] = {
-      "<Esc>:m .-2<CR>==gi"
+      "<Esc>:m .-2<CR>==gi",
     },
   },
   v = {
     ["<down>"] = {
-      ":m '>+1<CR>gv=gv"
+      ":m '>+1<CR>gv=gv",
     },
     ["<up>"] = {
-      ":m '<-2<CR>gv=gv"
+      ":m '<-2<CR>gv=gv",
     },
   },
 }

@@ -3,7 +3,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
-  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   { import = "astrocommunity.project.nvim-spectre" },
   -- example of importing a plugin, comment out to use it or add your own
